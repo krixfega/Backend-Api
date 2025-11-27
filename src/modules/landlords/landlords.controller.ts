@@ -62,3 +62,12 @@ export const updateLandlord = catchAsync(async (req: Request, res: Response, nex
     },
   });
 });
+
+export const deleteLandlord = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+  await landlordsService.delete(req.params.id);
+
+  res.status(204).json({
+    status: 'success',
+    data: null,
+  });
+});

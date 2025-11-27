@@ -10,5 +10,6 @@ router.get('/', landlordsController.getAllLandlords);
 router.post('/', landlordsController.createLandlord);
 router.get('/:id', landlordsController.getLandlord);
 router.patch('/:id', landlordsController.updateLandlord);
+router.delete('/:id', landlordsController.deleteLandlord);
 
 export default router;

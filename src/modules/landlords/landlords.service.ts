@@ -53,4 +53,15 @@ export class LandlordsService {
       data,
     });
   }
+
+  async delete(id: string) {
+    const landlord = await prisma.landlord.findUnique({ where: { id } });
+    if (!landlord) {
+      throw new AppError('Landlord not found', 404);
+    }
+
+    return prisma.landlord.delete({
+      where: { id },
+    });
+  }
 }
