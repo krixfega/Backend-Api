@@ -21,7 +21,7 @@ const app = express();
 // Middleware
 app.use(helmet());
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:5174'], // Vite default ports
+  origin: ['http://localhost:5173', 'http://localhost:5174', 'https://property-mgt.netlify.app'], // Vite default ports & Netlify
   credentials: true,
 }));
 app.use(morgan('dev'));
