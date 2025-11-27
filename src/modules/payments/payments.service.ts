@@ -28,7 +28,7 @@ export class PaymentService {
         where: { invoiceId: data.invoiceId }
     });
     
-    const totalPaid = allPayments.reduce((sum, p) => sum + Number(p.amount), 0);
+    const totalPaid = allPayments.reduce((sum: number, p: any) => sum + Number(p.amount), 0);
     
     let newStatus = 'PARTIALLY_PAID';
     if (totalPaid >= Number(invoice.amount)) {
